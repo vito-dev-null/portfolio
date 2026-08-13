@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Code Mockup — Java Close-up</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1620;
+      --accent:#ea580c;
+      --blue:#49a6ff;
+      --text:#c9d1d9;
+      --muted:#8593a1;
+    }
+    html,body{height:100%;margin:0}
+    body{
+      display:flex;align-items:center;justify-content:center;
+      background:radial-gradient(1200px 600px at 20% 20%, rgba(255,120,50,0.06), transparent),
+                 radial-gradient(900px 400px at 80% 80%, rgba(70,120,255,0.05), transparent),
+                 var(--bg);
+      font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color:var(--text);
+    }
+
+    .stage{width:3200px;height:1800px; /* large canvas for high-res renders */
+      display:flex;align-items:center;justify-content:center;position:relative}
+
+    /* simulating camera shallow depth with vignette and subtle blur background */
+    .bg-plate{position:absolute;inset:0;border-radius:18px;filter:blur(12px) saturate(1.05);opacity:0.55}
+    .work-surface{position:relative;z-index:2;width:2800px;height:1500px;border-radius:14px;padding:48px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent), var(--panel);box-shadow:0 30px 80px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);overflow:hidden;transform:rotateZ(-1deg)}
+
+    .editor-top{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+    .chip{height:12px;width:12px;border-radius:50%;background:linear-gradient(180deg,#ff7a6b,#ff4b3a);box-shadow:0 2px 6px rgba(0,0,0,0.5)}
+    .tabs{display:flex;gap:12px;color:var(--muted);font-weight:600}
+
+    pre.code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace; font-size:38px; line-height:1.05; margin:0; color:var(--text);}
+    .code .keyword{color:var(--accent);font-weight:700}
+    .code .type{color:var(--blue)}
+    .code .string{color:#f6c177}
+    .code .comment{color:rgba(200,210,220,0.35);font-style:italic}
+
+    /* subtle camera lens highlights */
+    .flare{position:absolute;right:10%;top:8%;width:520px;height:520px;filter:blur(120px);opacity:0.08;background:radial-gradient(circle at 30% 30%, #ff7a45 0%, transparent 30%), radial-gradient(circle at 70% 70%, #4ea7ff 0%, transparent 30%)}
+
+    /* depth of field vignette */
+    .vignette{position:absolute;inset:0;border-radius:16px;box-shadow:inset 0 140px 220px rgba(0,0,0,0.7), inset 0 -80px 220px rgba(0,0,0,0.6);pointer-events:none}
+
+    /* small metadata overlay */
+    .meta{position:absolute;left:56px;bottom:40px;color:var(--muted);font-size:22px;display:flex;gap:24px;align-items:center}
+    .badge{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);padding:10px 14px;border-radius:10px}
+
+    /* emulate slight tilt + blur for foreground bokeh */
+    .foreground-gloss{position:absolute;left:0;right:0;bottom:0;height:420px;background:linear-gradient(180deg, transparent, rgba(0,0,0,0.4));pointer-events:none}
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <div class="bg-plate"></div>
+    <div class="work-surface" role="img" aria-label="Close-up of Java code screenshot">
+      <div class="editor-top">
+        <div style="display:flex;align-items:center;gap:8px">
+          <div class="chip"></div><div class="chip" style="background:linear-gradient(180deg,#ffd86b,#ffb74d)"></div><div class="chip" style="background:linear-gradient(180deg,#9be0a2,#4fbf7a)"></div>
+        </div>
+        <div class="tabs">src/main/java/com/example/service/OrderService.java</div>
+      </div>
+
+      <pre class="code" aria-hidden="false"><code>
+<span class="comment">// High-performance order processing service</span>
+<span class="keyword">public</span> <span class="keyword">class</span> <span class="type">OrderService</span> <span class="keyword">implements</span> <span class="type">Service</span> {
+
+    <span class="comment">/* Repositories */</span>
+    <span class="keyword">private</span> final <span class="type">OrderRepository</span> orderRepository;
+    <span class="keyword">private</span> final <span class="type">PaymentRepository</span> paymentRepository;
+
+    <span class="keyword">public</span> <span class="type">OrderService</span>(<span class="type">OrderRepository</span> orderRepository, <span class="type">PaymentRepository</span> paymentRepository) {
+        <span class="keyword">this</span>.orderRepository = orderRepository;
+        <span class="keyword">this</span>.paymentRepository = paymentRepository;
+    }
+
+    <span class="keyword">public</span> <span class="type">Order</span> createOrder(<span class="type">OrderRequest</span> req) {
+        <span class="comment">// validate and persist</span>
+        Order order = new Order(req);
+        orderRepository.save(order);
+        return order;
+    }
+}
+      </code></pre>
+
+      <div class="meta">
+        <div class="badge">VS Code • Dark+</div>
+        <div class="badge">85mm • f/1.8 • 1/200s</div>
+        <div class="badge">Macro • Cinematic</div>
+      </div>
+      <div class="flare"></div>
+      <div class="vignette"></div>
+      <div class="foreground-gloss"></div>
+    </div>
+  </div>
+</body>
+</html>

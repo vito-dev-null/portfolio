@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vito D'Orio — Backend Java Developer | Trapani</title>
+  <meta name="description" content="Vito D'Orio — Sviluppo Web e Software su misura a Trapani. Esperto Backend Java, Spring Boot, API e architetture performanti." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand-group" style="display:flex;align-items:center;gap:0.9rem">
+      <a class="brand" href="index.html" aria-label="Vito D'Orio">
+        <svg class="site-logo-vd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="vdLogoTitle">
+          <title id="vdLogoTitle">VD logo</title>
+          <defs>
+            <linearGradient id="vdGradA" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#0ea5e9"/>
+              <stop offset="100%" stop-color="#0b6fb6"/>
+            </linearGradient>
+          </defs>
+          <path d="M60 6 L102 30 L102 78 L60 102 L18 78 L18 30 Z" fill="url(#vdGradA)" />
+          <text x="50%" y="57%" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" font-family="Plus Jakarta Sans, Inter, system-ui, sans-serif" font-weight="800" font-size="46">VD</text>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">Vito</span>
+          <span class="brand-surname">D'Orio</span>
+        </span>
+      </a>
+
+      <div class="header-contacts" style="display:flex;gap:0.5rem;align-items:center">
+        <a class="footer-link" href="https://wa.me/3299749128" target="_blank" aria-label="WhatsApp" title="WhatsApp">
+          <!-- WhatsApp SVG -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M20.52 3.48A11.87 11.87 0 0012 0C5.373 0 0 5.373 0 12c0 2.115.55 4.09 1.6 5.87L0 24l6.34-1.58A11.87 11.87 0 0012 24c6.627 0 12-5.373 12-12 0-3.2-1.24-6.15-3.48-8.52z" fill="#25D366"/>
+            <path d="M17.3 14.2c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15s-.78.98-.95 1.18c-.17.2-.34.22-.63.08-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.12.3-.34.45-.51.15-.17.2-.28.3-.46.1-.17.05-.33-.02-.47-.07-.13-.68-1.64-.94-2.25-.24-.58-.48-.5-.66-.51-.17-.02-.36-.02-.55-.02-.2 0-.51.07-.78.33-.28.28-1.07 1.04-1.07 2.54 0 1.5 1.1 2.95 1.25 3.16.15.2 2.17 3.3 5.26 4.63 3.08 1.33 3.08.89 3.64.84.57-.06 1.78-.73 2.03-1.44.25-.7.25-1.3.17-1.44-.08-.15-.28-.25-.57-.4z" fill="#fff"/>
+          </svg>
+        </a>
+        <a class="footer-link" href="mailto:user@example.com" aria-label="Email" title="Email">
+          <!-- Mail SVG -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="#c9d1d9"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <nav class="nav" id="main-nav" style="margin-left:auto">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">Chi sono</a></li>
+        <li><a href="skills.html">Skill</a></li>
+        <li><a href="#servizi">Servizi</a></li>
+        <li><a href="projects.html#security">Security</a></li>
+        <li><a href="projects.html#github">GitHub</a></li>
+        <li><a href="contact.html">Contatti</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Sviluppo Web e Software su misura a Trapani | Esperto Backend Java</h1>
+          <p class="lead"><span class="lead-inner">Realizzo siti web, e-commerce e soluzioni digitali su misura per qualsiasi attività, azienda e professionisti, da ristoranti, bar, barbieri e hotel a palestre, studi professionali, artigiani, e-commerce e influencer, creando vetrine digitali moderne e veloci per dare una svolta concreta alla tua presenza online e attrarre nuovi clienti.</span></p>
+          <div class="hero-actions">
+            <a href="#inbox" class="btn primary large">Richiedi un preventivo</a>
+            <a href="#servizi" class="btn outline large">Scopri i settori</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="assistant-widget" role="region" aria-label="Assistente AI">
+      <button class="ai-close-btn" aria-label="Chiudi assistente">✕</button>
+      <button id="ai-toggle" class="assistant-button" aria-label="Apri assistente">
+        <span class="assistant-icon">🐧</span>
+        <span class="assistant-label">Ciao! Sono il tuo assistente AI</span>
+      </button>
+    </div>
+
+    <!-- Chat window for AI assistant (hidden by default) -->
+    <div id="ai-chat" class="ai-chat" style="display:none;" aria-hidden="true">
+      <div class="ai-chat-header">Assistente AI</div>
+      <div id="ai-messages" class="ai-chat-messages">
+        <div class="msg bot">Ciao! Scrivi qui la tua domanda e risponderò subito (risposta simulata).</div>
+      </div>
+      <div class="ai-chat-input">
+        <input id="ai-input" class="ai-input" placeholder="Scrivi un messaggio..." aria-label="Messaggio" />
+        <button id="ai-send" class="ai-send">Invia</button>
+      </div>
+    </div>
+
+    <section id="settori" class="section surface sector-showcase">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="lead-bg"><span class="lead-text">Vetrine digitali per attività e professionisti</span></h2>
+          <p class="section-intro" style="font-weight: 700;">Costruisco siti e soluzioni digitali pensate per ogni tipo di attività: ristoranti, bar, hotel, barbieri, palestre, studi professionali, artigiani, e-commerce e influencer.</p>
+        </div>
+
+        <div class="sector-slider" aria-label="Settori serviti">
+          <article class="sector-card" style="--bg-image: url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=80');">
+            <span>Ristoranti</span>
+          </article>
+          <article class="sector-card" style="--bg-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80');">
+            <span>Bar</span>
+          </article>
+          <article class="sector-card" style="--bg-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80');">
+            <span>Hotel</span>
+          </article>
+          <article class="sector-card" style="--bg-image: url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=80');">
+            <span>Barbieri</span>
+          </article>
+          <article class="sector-card" style="--bg-image: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=80');">
+            <span>Palestre</span>
+          </article>
+          <article class="sector-card" style="--bg-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80');">
+            <span>Professionisti</span>
+          </article>
+          <article class="sector-card" style="--bg-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80');">
+            <span>Artigiani</span>
+          </article>
+          <article class="sector-card" style="--bg-image: url('https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?auto=format&fit=crop&w=900&q=80');">
+            <span>E-commerce</span>
+          </article>
+          <article class="sector-card" style="--bg-image: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80');">
+            <span>Influencer</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="servizi" class="section surface">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="lead-bg"><span class="lead-text">Soluzioni digitali e IT complete per far crescere il tuo business</span></h2>
+          <p class="section-intro" style="font-weight: 700;">Offro supporto tecnico e digitale per aziende, attività commerciali e professionisti: sviluppo software, manutenzione, assistenza hardware e consulenza Linux.</p>
+        </div>
+
+        <div class="services-grid services-grid-4">
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">💻</div>
+            <h3>Sviluppo Web e Software Full-Stack</h3>
+            <p>Creazione di applicazioni web, siti e software su misura, con ottimizzazione SEO inclusa fin dalla base.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">🛠️</div>
+            <h3>Manutenzione</h3>
+            <p>Servizio continuo di manutenzione e aggiornamento per siti web e software esistenti.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">🔧</div>
+            <h3>Riparazioni Hardware</h3>
+            <p>Diagnostica avanzata e riparazione di componenti hardware per sistemi e workstation.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">🐧</div>
+            <h3>Consulenza Linux</h3>
+            <p>Installazione, configurazione e ottimizzazione di sistemi e ambienti Linux per sviluppo e produttività.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+    <section id="inbox" class="section surface">
+      <div class="container">
+        <div class="section-header">
+          <h2>Mandaci un messaggio</h2>
+          <p class="section-intro">Scrivimi per una consulenza, un preventivo o un progetto digitale su misura.</p>
+        </div>
+
+        <div class="inbox-card">
+          <form id="inbox-form" class="inbox-form">
+            <div class="inbox-row">
+              <div class="field">
+                <label for="inbox-name">Nome</label>
+                <input id="inbox-name" type="text" name="name" required>
+              </div>
+              <div class="field">
+                <label for="inbox-surname">Cognome</label>
+                <input id="inbox-surname" type="text" name="surname" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="inbox-email">Email</label>
+              <input id="inbox-email" type="email" name="email" required>
+            </div>
+
+            <div class="field">
+              <label for="inbox-message">Messaggio</label>
+              <textarea id="inbox-message" name="message" rows="6" required></textarea>
+            </div>
+
+            <div class="inbox-actions">
+              <button type="submit" class="btn primary large">Invia messaggio</button>
+            </div>
+            <div id="inbox-status" class="muted" style="margin-top:8px"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-text">© 2026 — Vito. Crafted with passion and clean code. <a href="privacy.html" class="footer-link">Privacy Policy</a> <span class="footer-sep">|</span> <a href="cookie.html" class="footer-link">Cookie Policy</a></p>
+    </div>
+  </footer>
+
+  <!-- Cookie consent banner (fixed above the footer) -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
+    <div class="cookie-inner container">
+      <div class="cookie-text">Usiamo cookie per migliorare l'esperienza sul sito. Continuando la navigazione accetti i cookie non essenziali.</div>
+      <div class="cookie-actions">
+        <a href="cookie.html" class="btn outline">Dettagli</a>
+      <button id="cookie-reject" class="btn">Rifiuta</button>
+      <button id="cookie-accept" class="btn primary">Accetta</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

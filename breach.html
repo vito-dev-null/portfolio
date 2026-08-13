@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Breach Check</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 1.5rem; }
+    .result { margin-top: 1rem; padding: 1rem; border-radius: 6px; }
+    .safe { background:#e6ffed; color:#0a7f3b; }
+    .breached { background:#ffe6e6; color:#a30000; }
+  </style>
+</head>
+<body>
+  <h1>Controlla se la tua email è stata compromessa</h1>
+  <form id="breachForm">
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required />
+    <button type="submit">Controlla</button>
+  </form>
+
+  <div id="result" aria-live="polite"></div>
+
+  <script>
+    const form = document.getElementById('breachForm');
+    const resultDiv = document.getElementById('result');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      resultDiv.innerHTML = 'Verifico...';
+      const email = document.getElementById('email').value;
+      try {
+        const res = await fetch('http://localhost:8080/api/check?email=' + encodeURIComponent(email));
+        if (!res.ok) throw new Error('Errore rete: ' + res.status);
+        const json = await res.json();
+        renderResult(json);
+      } catch (err) {
+        resultDiv.innerHTML = '<div class="result breached">Errore: ' + err.message + '</div>';
+      }
+    });
+
+    function renderResult(data) {
+      if (data.breached) {
+        let html = '<div class="result breached">\n';
+        html += `<strong>${data.email}</strong> sembra compromessa.<br/>`;
+        if (data.breaches && data.breaches.length) {
+          html += '<ul>';
+          data.breaches.forEach(b => html += `<li>${b.name || b.domain} — ${b.breachDate || ''}</li>`);
+          html += '</ul>';
+        }
+        html += `<p>${data.note || ''}</p>`;
+        html += '</div>';
+        resultDiv.innerHTML = html;
+      } else {
+        resultDiv.innerHTML = `<div class="result safe"><strong>${data.email}</strong> non risulta compromessa.<br/>${data.note || ''}</div>`;
+      }
+    }
+  </script>
+</body>
+</html>

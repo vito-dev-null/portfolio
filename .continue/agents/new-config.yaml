@@ -1,0 +1,5 @@
+models:
+  - title: Poolside Laguna XS
+    provider: openrouter
+    model: poolside/laguna-xs-2.1:free
+    apiKey: "REDACTED_SECRET"
